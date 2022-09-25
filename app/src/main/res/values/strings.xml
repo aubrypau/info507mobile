@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Info507</string>
+    <string name="expense_paid_for">Pour</string>
+    <string name="expense_paid_by">Payé par</string>
 </resources>
