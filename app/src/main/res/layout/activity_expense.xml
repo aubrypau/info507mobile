@@ -164,9 +164,6 @@
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
-            <TextView
-                android:layout_width=""
-                android:layout_height=""
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/expense_edit"
@@ -177,9 +174,7 @@
             android:src="@drawable/ic_edit"
 
             app:backgroundTint="@color/colorAccent"
-            app:tint="@color/white"
-
-            />
+            app:tint="@color/white" />
 
         </LinearLayout>
 

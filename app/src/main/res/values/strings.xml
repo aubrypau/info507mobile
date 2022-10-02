@@ -2,4 +2,18 @@
     <string name="app_name">Info507</string>
     <string name="expense_paid_for">Pour</string>
     <string name="expense_paid_by">Payé par</string>
+
+    <string name="expense_name">Nom</string>
+    <string name="expense_category">Catégorie</string>
+    <string name="expense_date">Date</string>
+    <string name="expense_amount">Montant</string>
+    <string name="expense_author">Auteur</string>
+
+    <string name="expense_dialog_add">Ajouter une dépense...</string>
+    <string name="expense_dialog_edit">Modifier une dépense...</string>
+    <string name="expense_dialog_confirm">Valider</string>
+    <string name="expense_dialog_cancel">Annuler</string>
+
+    <string name="category_shopping">Course</string>
+    <string name="category_other">Autre</string>
 </resources>
