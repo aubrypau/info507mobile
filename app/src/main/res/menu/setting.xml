@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:enabled="false"
+        android:title="@string/storage_choice" />
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/storage_none"
+            android:title="@string/storage_none" />
+        <item
+            android:id="@+id/storage_data_base"
+            android:title="@string/storage_data_base" />
+        <item
+            android:id="@+id/storage_file_json"
+            android:title="@string/storage_file_json" />
+        <item
+            android:id="@+id/storage_file_csv"
+            android:title="@string/storage_file_csv" />
+    </group>
+</menu>

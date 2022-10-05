@@ -1,7 +1,7 @@
 package storage.utility.file
 
 import android.content.Context
-import storage.Storage
+import storage.utility.Storage
 import java.io.BufferedReader
 import java.io.FileNotFoundException
 import java.io.InputStreamReader
@@ -50,15 +50,19 @@ abstract class FileStorage<T>(private val context: Context, name: String, extens
     }
 
     override fun insert(obj: T): Int {
-        TODO("Not yet implemented")
+        data.put(nextId, create(nextId, obj))
+        nextId ++
+        write()
+        return nextId -1
     }
 
     override fun delete(id: Int) {
-        TODO("Not yet implemented")
+        data.remove(id)
+        write()
     }
 
-    override fun find(id: Int): T {
-        TODO("Not yet implemented")
+    override fun find(id: Int): T? {
+        return data[id]
     }
 
     override fun findAll(): List<T> {
@@ -66,7 +70,7 @@ abstract class FileStorage<T>(private val context: Context, name: String, extens
     }
 
     override fun size(): Int {
-        TODO("Not yet implemented")
+        return data.size
     }
 
     override fun update(id: Int, obj: T) {

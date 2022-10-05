@@ -3,6 +3,7 @@ package storage.utility
 import android.content.ContentValues
 import android.database.Cursor
 import android.database.sqlite.SQLiteOpenHelper
+import android.provider.BaseColumns
 
 
 abstract class DataBaseStorage<T>(private val helper: SQLiteOpenHelper, private val table: String): Storage<T>() {
@@ -31,6 +32,8 @@ abstract class DataBaseStorage<T>(private val helper: SQLiteOpenHelper, private 
     }
 
     override fun update(id: Int, obj: T) {
-        TODO("Not yet implemented")
+        helper.writableDatabase.update(
+            table, objectToValues(obj), "${BaseColumns._ID} = ?", arrayOf("$id")
+        )
     }
 }

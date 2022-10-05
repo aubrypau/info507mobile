@@ -16,4 +16,12 @@
 
     <string name="category_shopping">Course</string>
     <string name="category_other">Autre</string>
+
+    <string name="storage_choice">Choix du stockage</string>
+    <string name="storage_none">Pas de stockage</string>
+    <string name="storage_data_base">Base de donées</string>
+    <string name="storage_file_json">JSON</string>
+    <string name="storage_file_csv">CSV</string>
+
+
 </resources>

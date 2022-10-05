@@ -10,7 +10,7 @@ abstract class JSONFileStorage<T>(context: Context, name: String): FileStorage<T
 
     override fun dataToString(data: HashMap<Int, T>): String {
         val json = JSONObject()
-        TODO("Not yet implemented")
+        data.forEach{pair -> json.put()}
         return json.toString()
     }
 

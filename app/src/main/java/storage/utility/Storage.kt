@@ -5,7 +5,7 @@ abstract class Storage<T> {
 
     abstract fun size(): Int
 
-    abstract fun find(id: Int): T
+    abstract fun find(id: Int): T?
 
     abstract fun findAll() : List<T>
 
