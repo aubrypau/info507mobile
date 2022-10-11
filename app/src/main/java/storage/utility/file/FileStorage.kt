@@ -21,6 +21,14 @@ abstract class FileStorage<T>(private val context: Context, name: String, extens
     protected abstract fun stringToData(value :String): HashMap<Int,T>
 
 
+    private fun max(keys : Set<Int>) : Int{
+        var res = 1
+        keys.forEach { key ->
+            if(res < key) res = key
+        }
+        return res
+    }
+
     private fun read(){
         try{
             val input = context.openFileInput(fileName)
@@ -35,7 +43,7 @@ abstract class FileStorage<T>(private val context: Context, name: String, extens
                 }
                 input.close()
                 data = stringToData(builder.toString())
-                nextId = if(data.keys.size == 0) 1 else data.keys.max() + 1
+                nextId = if(data.keys.size == 0) 1 else max(data.keys) + 1
             }
         }catch(e: FileNotFoundException){
             write()
@@ -66,7 +74,7 @@ abstract class FileStorage<T>(private val context: Context, name: String, extens
     }
 
     override fun findAll(): List<T> {
-        TODO("Not yet implemented")
+        return data.toList().map{pair -> pair.second}
     }
 
     override fun size(): Int {
@@ -74,7 +82,8 @@ abstract class FileStorage<T>(private val context: Context, name: String, extens
     }
 
     override fun update(id: Int, obj: T) {
-        TODO("Not yet implemented")
+        data[id] = obj
+        write()
     }
 
 }

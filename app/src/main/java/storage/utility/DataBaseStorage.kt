@@ -16,15 +16,29 @@ abstract class DataBaseStorage<T>(private val helper: SQLiteOpenHelper, private 
     }
 
     override fun delete(id: Int) {
-        TODO("Not yet implemented")
+        helper.writableDatabase.delete(table, "${BaseColumns._ID} = ?", arrayOf("$id"))
     }
 
-    override fun find(id: Int): T {
-        TODO("Not yet implemented")
-    }
+    override fun find(id: Int): T? {
+            var obj: T? = null
+            val cursor = helper.readableDatabase.query(
+                table, null, "${BaseColumns._ID} = ?", arrayOf("$id"), null, null, null
+            )
+            if(cursor.moveToNext()){
+                obj = cursorToObject(cursor)
+            }
+            cursor.close()
+            return obj
+        }
 
     override fun findAll(): List<T> {
-        TODO("Not yet implemented")
+        val list = arrayListOf<T>()
+        val cursor = helper.readableDatabase.query(table, null, null, null, null, null,null, null)
+        while(cursor.moveToNext()){
+            list.add(cursorToObject(cursor))
+        }
+        cursor.close()
+        return list
     }
 
     override fun size(): Int {

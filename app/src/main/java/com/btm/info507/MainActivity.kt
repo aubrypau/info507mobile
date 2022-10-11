@@ -11,7 +11,8 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import dialog.ExpenseDialogFragment
-import storage.utility.ExpenseStorage
+import storage.ExpenseStorage
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
